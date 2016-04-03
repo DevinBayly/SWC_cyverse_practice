@@ -1,0 +1,29 @@
+---
+title: "capstone_exercise"
+output: html_document
+---
+now we will begin
+
+importing and setup
+```{r }
+
+gap.in <- read.csv("http://naupaka.net/files/gapminder.csv")
+View(gap.in)
+```
+
+ok now we are going to setup the dplyr stuff setting up librarie
+
+```{r}
+library(dplyr)
+```
+countries of interest here as a countries vector
+``` {r}
+my_countries <- c("China","Cambodia")
+```
+
+Now we are going to setup things up for some analysis first with filtering to get only my countries
+```{r filtering
+}
+gap.in %>%
+filter(country %in% my_countries) -> country_data
+```
